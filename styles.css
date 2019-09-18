@@ -1,0 +1,68 @@
+.search-area {
+    padding: 0;
+    font-family: Arial, Helvetica, Sans-Serif;
+    max-width: 500px;
+    margin: auto;
+    border: solid #eee 2px;
+    border-radius: 5px;
+}
+
+.search-area h1 {
+    width: 80%;
+    margin-left: 10%;
+}
+
+.search-area input {
+    font-size: 1.5em;
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    border: solid #eee 2px;
+}
+
+.artist-list {
+    margin-top: 0;
+    padding: 0;
+    font-family: Helvetica, Arial, Sans-Serif;
+    max-width: 400px;
+    margin: auto;
+}
+
+.artist-list ul {
+    margin-top: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.artist-list li {
+    border: solid #eee 2px;
+    border-top: none;
+}
+
+.artist-list img {
+    width: 72px;
+    float: left;
+    margin: 14px;
+}
+
+.artist-list h3 {
+    margin: 0;
+    padding : 15px 0px 5px;
+}
+
+.artist-list p {
+    margin: 0;
+    margin-right: 20px;
+    padding : 0px;
+    line-height: 1.5em;
+}
+
+.artist-card {
+    height: 100px;
+}
+
+.artist-card:hover {
+    background-color: #eee;
+    cursor: pointer;
+}
