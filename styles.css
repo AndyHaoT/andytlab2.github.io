@@ -44,6 +44,7 @@
     width: 72px;
     float: left;
     margin: 14px;
+    border-radius: 5px;
 }
 
 .artist-list h3 {
