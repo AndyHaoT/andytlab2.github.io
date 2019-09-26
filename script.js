@@ -43,15 +43,15 @@ function addArtistToList(name, desc, imgUrl) {
     var img = document.createElement("img");
     img.src = imgUrl;
     var delBtn = document.createElement("Button");
-    delBtn.innerHTML = "Delete";
+    delBtn.textContent = "Delete";
     delBtn.className = "btn";
     delBtn.addEventListener("click", function(){
         this.parentNode.parentNode.remove();
     });
     var artistName = document.createElement("h3");
-    artistName.innerHTML = name;
+    artistName.textContent = name;
     var artistDesc = document.createElement("p");
-    artistDesc.innerHTML = desc;
+    artistDesc.textContent = desc;
     card.appendChild(img);
     card.appendChild(delBtn);
     card.appendChild(artistName);
