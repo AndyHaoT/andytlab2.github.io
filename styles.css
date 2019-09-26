@@ -1,3 +1,11 @@
+.btn {
+    font-family: Monaco, Arial, Sans-Serif;
+    cursor: pointer;
+    background-color: #eee;
+    border: none;
+    padding: 9px;
+}
+
 .search-area {
     padding: 0;
     font-family: Arial, Helvetica, Sans-Serif;
@@ -14,14 +22,46 @@
 
 .search-area input {
     font-size: 1.5em;
-    width: 80%;
+    width: 60%;
     margin-left: 10%;
     margin-bottom: 30px;
     border-radius: 5px;
     border: solid #eee 2px;
 }
 
-.artist-list {
+.search-area button {
+    width: 20%;
+    float: right;
+    margin-right: 8%;
+}
+
+.form-area {
+    padding: 0;
+    font-family: Arial, Helvetica, Sans-Serif;
+    max-width: 350px;
+    margin: auto;
+}
+
+.form-area .artist-info {
+    font-size: 1.2em;
+    text-align: center;
+    padding: 5px;
+    width: 100%;
+    margin: 0;
+    border-radius: 5px;
+    border: solid #eee 2px;
+}
+
+.form-area form {
+    display: none;
+}
+
+.form-area #add-artist-btn {
+    width: 50%;
+    margin-left: 25%;
+}
+
+.list-area {
     margin-top: 0;
     padding: 0;
     font-family: Helvetica, Arial, Sans-Serif;
@@ -29,41 +69,53 @@
     margin: auto;
 }
 
-.artist-list ul {
+.list-area ul {
     margin-top: 0;
     padding: 0;
     list-style: none;
 }
 
-.artist-list li {
+.list-area li {
     border: solid #eee 2px;
     border-top: none;
-}
-
-.artist-list img {
-    width: 72px;
-    float: left;
-    margin: 14px;
-    border-radius: 5px;
-}
-
-.artist-list h3 {
-    margin: 0;
-    padding : 15px 0px 5px;
-}
-
-.artist-list p {
-    margin: 0;
-    margin-right: 20px;
-    padding : 0px;
-    line-height: 1.5em;
 }
 
 .artist-card {
     height: 100px;
 }
 
+.artist-card img {
+    width: 72px;
+    float: left;
+    margin: 14px;
+    border-radius: 5px;
+}
+
+.artist-card h3 {
+    margin: 0;
+    padding : 15px 0px 5px;
+}
+
+.artist-card p {
+    margin: 0;
+    padding : 0px;
+    line-height: 1.5em;
+    max-width: 200px;
+    max-height: 50px;
+    overflow: hidden;
+}
+
+.artist-card button {
+    font-family: Helvetica, Arial, Sans-Serif;
+    height: 32px;
+    margin-top: 34px;
+    color: white;
+    background-color: #ed143d;
+    float: right;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
 .artist-card:hover {
     background-color: #eee;
-    cursor: pointer;
 }
