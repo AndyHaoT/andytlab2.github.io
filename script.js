@@ -24,7 +24,7 @@ function addArtist() {
     var imgUrl = document.getElementById("artist-img");
 
     // Valid form
-    if (name.value != "" && name.value.length <= 40 && desc.value != "" && desc.value.length <= 40 && imgUrl.value != "") {
+    if (name.value != "" && desc.value != "" && imgUrl.value != "") {
         addArtistToList(name.value, desc.value, imgUrl.value);
     
         // Clear form and hide
