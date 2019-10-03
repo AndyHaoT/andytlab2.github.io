@@ -22,16 +22,20 @@
 
 .search-area input {
     font-size: 1.5em;
-    width: 60%;
-    margin-left: 10%;
+    width: 50%;
+    margin-left: 8%;
     margin-bottom: 30px;
     border-radius: 5px;
     border: solid #eee 2px;
 }
 
 .search-area button {
-    width: 20%;
+    width: 15%;
     float: right;
+    margin-right: 1%;
+}
+
+.search-area .search-btn {
     margin-right: 8%;
 }
 
