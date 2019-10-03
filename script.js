@@ -81,7 +81,7 @@ function addArtistToList(artist) {
     list.appendChild(item);
 }
 
-// This function updates the localStorage with what's being displayed on the screen
+// This function updates the localStorage with the current page content
 function updateLocalStorage() {
     var list = document.getElementById("artist-list").children;
     artists.length = 0;
@@ -94,4 +94,16 @@ function updateLocalStorage() {
         ));
     
     localStorage.setItem('artists', JSON.stringify(artists));
+}
+
+function searchArtist() {
+    var searchValue = document.getElementById("search-input").value.toLowerCase();
+    var list = document.getElementById("artist-list").children;
+    
+    for (var i = 0; i < list.length; i++) {
+        if (list[i].getElementsByClassName("artist-card")[0].getElementsByTagName("h3")[0].textContent.toLowerCase().includes(searchValue))
+            list[i].style.display = "block";
+        else
+            list[i].style.display = "none";
+    }
 }
