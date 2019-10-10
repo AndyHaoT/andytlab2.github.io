@@ -12,18 +12,11 @@ function toggleForm() {
 }
 
 function deleteArtist(button) {
-    button.parentNode.parentNode.remove();
-    let list = document.getElementById("artist-list").children;
-    let artists = [];
-
-    for (let i = 0; i < list.length; i++)
-        artists.push({
-            name: list[i].getElementsByClassName("artist-card")[0].getElementsByTagName("h3")[0].textContent,
-            desc: list[i].getElementsByClassName("artist-card")[0].getElementsByTagName("p")[0].textContent,
-            imgUrl: list[i].getElementsByClassName("artist-card")[0].getElementsByTagName("img")[0].src
-        })
-
-    post('/artist/delete', { data: JSON.stringify(artists) });
+    post('/artist/delete', {
+        name: button.parentNode.getElementsByTagName("h3")[0].textContent,
+        desc: button.parentNode.getElementsByTagName("p")[0].textContent,
+        imgUrl: button.parentNode.getElementsByTagName("img")[0].src
+    });
 }
 
 function post(path, params, method='post') {

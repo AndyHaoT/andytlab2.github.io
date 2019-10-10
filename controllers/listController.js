@@ -37,18 +37,30 @@ exports.artist_add_post = function(req, res) {
 
 exports.artist_del_post = function(req, res) {
     try {
-        let newList = JSON.parse(req.body.data);
-        fs.writeFile('artists.json' , JSON.stringify(newList), 'utf8', (err) => {
-            if (err) {
-                console.log(err);
-            } else {
-                console.log("File successfully written to artists.json!");
-            }
+        let name = req.body.name;
+        let desc = req.body.desc;
+        let imgUrl = req.body.imgUrl;
+        readFile('artists.json', 'utf8')
+        .then(function(data) {
+            let artists = JSON.parse(data);
+            let newList = [];
+            artists.forEach(artist => {
+                if (artist.name != name || artist.desc != desc || artist.imgUrl != imgUrl)
+                    newList.push(artist);
+            });
+            fs.writeFile('artists.json' , JSON.stringify(newList), 'utf8', (err) => {
+                if (err) {
+                    console.log(err);
+                } else {
+                    console.log("File successfully written to artists.json!");
+                }
+            });
+            res.redirect('/');
         });
     } catch(error) {
         console.log(error);
+        res.redirect('/');
     }
-    res.redirect('/');
 }
 
 exports.artist_search_get = function(req, res) {
