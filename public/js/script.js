@@ -15,7 +15,7 @@ function deleteArtist(button) {
     post('/artist/delete', {
         name: button.parentNode.getElementsByTagName("h3")[0].textContent,
         desc: button.parentNode.getElementsByTagName("p")[0].textContent,
-        imgUrl: button.parentNode.getElementsByTagName("img")[0].src
+        imgUrl: button.parentNode.getElementsByTagName("img")[0].alt
     });
 }
 

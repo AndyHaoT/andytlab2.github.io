@@ -34,7 +34,7 @@
             <% artists.forEach(function(artist) { %>
                 <li>
                     <div class="artist-card">
-                        <img src="<%= artist.imgUrl %>" onerror="this.src='/img/404.png';this.onerror='';">
+                        <img src="<%= artist.imgUrl %>" onerror="this.src='/img/404.png';this.onerror='';" alt="<%= artist.imgUrl %>">
                         <button class="btn" onclick="deleteArtist(this)">Delete</button>
                         <h3><%= artist.name %></h3>
                         <p><%= artist.desc %></p>
