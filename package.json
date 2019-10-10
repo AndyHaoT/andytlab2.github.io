@@ -1,0 +1,23 @@
+{
+  "name": "artist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndyHaoT/andytlab2.github.io.git"
+  },
+  "author": "Hao Tang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndyHaoT/andytlab2.github.io/issues"
+  },
+  "homepage": "https://github.com/AndyHaoT/andytlab2.github.io#readme",
+  "dependencies": {
+    "ejs": "^2.7.1",
+    "express": "^4.17.1"
+  }
+}
