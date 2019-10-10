@@ -15,16 +15,19 @@
 <body>
     <div class="search-area">
         <h1>Artist Directory</h1>
-        <input id="search-input" type="text">
-        <button class="btn search-btn" onclick="searchArtist()">Search</button>
-        <button class="btn" onclick="toggleForm()">Add</button>
+        <form action="/artist/search" method="GET" enctype='application/x-www-form-urlencoded'>
+            <input id="search-input" name="key" type="text" maxlength="40" pattern="^[a-zA-Z0-9 ]*$" value="<%= searchKey %>" title="Letters and numbers only.">
+            <input class="btn search-btn" type="submit" value="Search">
+            <input class="btn add-btn" onclick="toggleForm()" type="button" value="Add">
+        </form>
+        
     </div>
     <div class="form-area">
-        <form id="add-artist-form">
-            <input id="artist-name" class="artist-info" type="text" maxlength="40" placeholder="Artist Name">
-            <input id="artist-desc" class="artist-info" type="text" maxlength="40" placeholder="About artist">
-            <input id="artist-img" class="artist-info" type="url" placeholder="Image url">
-            <input id="add-artist-btn" class="btn" type="button" value="Add" onclick="addArtist()">
+        <form id="add-artist-form" action="/artist/add" method="POST" enctype='application/x-www-form-urlencoded'>
+            <input id="artist-name" class="artist-info" type="text" name="name" maxlength="40" pattern="^[a-zA-Z0-9 ]*$" required title="Letters and numbers only." placeholder="Artist Name">
+            <input id="artist-desc" class="artist-info" type="text" name="desc" maxlength="40" required placeholder="About artist">
+            <input id="artist-img" class="artist-info" type="url" name="imgUrl" required placeholder="Image url">
+            <input id="add-artist-btn" class="btn" type="submit" value="Add">
         </form>
     </div>
     <div class="list-area">
@@ -32,8 +35,8 @@
             <% artists.forEach(function(artist) { %>
                 <li>
                     <div class="artist-card">
-                        <img src=<%= artist.imgUrl %>>
-                        <button class="btn">Delete</button>
+                        <img src="<%= artist.imgUrl %>" onerror="this.src='/img/404.png';this.onerror='';">
+                        <button class="btn" onclick="deleteArtist(this)">Delete</button>
                         <h3><%= artist.name %></h3>
                         <p><%= artist.desc %></p>
                     </div>

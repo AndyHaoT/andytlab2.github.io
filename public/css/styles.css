@@ -20,7 +20,7 @@
     margin-left: 10%;
 }
 
-.search-area input {
+.search-area #search-input {
     font-size: 1.5em;
     width: 50%;
     margin-left: 8%;
@@ -29,13 +29,15 @@
     border: solid #eee 2px;
 }
 
-.search-area button {
+.search-area .add-btn {
     width: 15%;
     float: right;
     margin-right: 1%;
 }
 
 .search-area .search-btn {
+    width: 15%;
+    float: right;
     margin-right: 8%;
 }
 
