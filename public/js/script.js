@@ -11,6 +11,21 @@ function toggleForm() {
     }
 }
 
+function deleteArtist(button) {
+    button.parentNode.parentNode.remove();
+    let list = document.getElementById("artist-list").children;
+    let artists = [];
+
+    for (let i = 0; i < list.length; i++)
+        artists.push({
+            name: list[i].getElementsByClassName("artist-card")[0].getElementsByTagName("h3")[0].textContent,
+            desc: list[i].getElementsByClassName("artist-card")[0].getElementsByTagName("p")[0].textContent,
+            imgUrl: list[i].getElementsByClassName("artist-card")[0].getElementsByTagName("img")[0].src
+        })
+
+    post('/artist/delete', { data: JSON.stringify(artists) });
+}
+
 function post(path, params, method='post') {
     const form = document.createElement('form');
     form.method = method;
@@ -29,24 +44,4 @@ function post(path, params, method='post') {
   
     document.body.appendChild(form);
     form.submit();
-}
-
-function deleteArtist(button) {
-    button.parentNode.parentNode.remove();
-    let list = document.getElementById("artist-list").children;
-    let artists = [];
-
-    for (let i = 0; i < list.length; i++)
-        artists.push({
-            name: list[i].getElementsByClassName("artist-card")[0].getElementsByTagName("h3")[0].textContent,
-            desc: list[i].getElementsByClassName("artist-card")[0].getElementsByTagName("p")[0].textContent,
-            imgUrl: list[i].getElementsByClassName("artist-card")[0].getElementsByTagName("img")[0].src
-        })
-
-    post('/artist/delete', { data: JSON.stringify(artists) });
-}
-
-function searchArtist() {
-    var searchValue = document.getElementById("search-input").value.toLowerCase();
-    post('/artist/search', { key: searchValue }, 'get');
 }

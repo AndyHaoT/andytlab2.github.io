@@ -1,8 +1,7 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
-
-let routes = require(path.join(__dirname, 'routes', 'index'));
+const routes = require(path.join(__dirname, 'routes', 'index'));
 
 var app = express();
 

@@ -1,8 +1,7 @@
 const artist = require('../models/artist');
-
-let Artist = artist.Artist;
-let fs = require('fs');
-let util = require('util');
+const Artist = artist.Artist;
+const fs = require('fs');
+const util = require('util');
 const readFile = util.promisify(fs.readFile);
 
 exports.artist_list = function(req, res) {
