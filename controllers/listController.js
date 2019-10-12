@@ -55,11 +55,11 @@ exports.artist_del_post = function(req, res) {
                     console.log("File successfully written to artists.json!");
                 }
             });
-            res.redirect('/');
+            res.sendStatus(200);
         });
     } catch(error) {
         console.log(error);
-        res.redirect('/');
+        res.sendStatus(500);
     }
 }
 

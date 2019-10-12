@@ -12,29 +12,24 @@ function toggleForm() {
 }
 
 function deleteArtist(button) {
-    post('/artist/delete', {
-        name: button.parentNode.getElementsByTagName("h3")[0].textContent,
-        desc: button.parentNode.getElementsByTagName("p")[0].textContent,
-        imgUrl: button.parentNode.getElementsByTagName("img")[0].alt
-    });
-}
+    let name = button.parentNode.getElementsByTagName("h3")[0].textContent;
+    let desc = button.parentNode.getElementsByTagName("p")[0].textContent;
+    let imgUrl = button.parentNode.getElementsByTagName("img")[0].alt;
 
-function post(path, params, method='post') {
-    const form = document.createElement('form');
-    form.method = method;
-    form.action = path;
-  
-    for (const key in params) {
-      if (params.hasOwnProperty(key)) {
-        const hiddenField = document.createElement('input');
-        hiddenField.type = 'hidden';
-        hiddenField.name = key;
-        hiddenField.value = params[key];
-  
-        form.appendChild(hiddenField);
-      }
-    }
-  
-    document.body.appendChild(form);
-    form.submit();
+    fetch('/artist/delete', {
+        method: 'post',
+        headers: {
+          "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+        },
+        body: "name=".concat(name, "&desc=", desc, "&imgUrl=", imgUrl)
+    })
+    .then(function(response) {
+        if (response.status == 200) {
+            button.parentNode.parentNode.remove();
+            return;
+        }
+    })
+    .catch(function (error) {
+        console.log('Request failed', error);
+    });
 }
