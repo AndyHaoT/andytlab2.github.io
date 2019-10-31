@@ -12,6 +12,11 @@
 </head>
 
 <body>
+    <nav>
+        <form action="/logout">
+            <input class="default-btn" type="submit" value="Logout">
+        </form>
+    </nav>
     <div class="search-area">
         <h1>Artist Directory</h1>
         <form action="/artist/search" method="GET" enctype='application/x-www-form-urlencoded'>
@@ -34,10 +39,10 @@
             <% artists.forEach(function(artist) { %>
                 <li>
                     <div class="artist-card">
-                        <img src="<%= artist.imgUrl %>" onerror="this.src='/img/404.png';this.onerror='';" alt="<%= artist.imgUrl %>">
+                        <img src="<%= artist.img_url %>" onerror="this.src='/img/404.png';this.onerror='';" alt="<%= artist.img_url %>">
                         <button class="btn" onclick="deleteArtist(this)">Delete</button>
-                        <h3><%= artist.name %></h3>
-                        <p><%= artist.desc %></p>
+                        <h3><%= artist.artist_name %></h3>
+                        <p><%= artist.artist_desc %></p>
                     </div>
                 </li>
             <% }); %>
